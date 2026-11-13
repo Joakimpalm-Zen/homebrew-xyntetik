@@ -16,19 +16,24 @@ ASSETS = {"macos": "runner-macos-arm64.tar.gz", "linux": "runner-linux-x86_64.ta
 TEMPLATE = '''class XyntetikRunner < Formula
   desc "Local GGUF inference engine with signed, replayable receipts"
   homepage "https://xyntetik.com"
-  version "{version}"
   license all_of: ["Apache-2.0", "MIT"]
 
   on_macos do
     depends_on arch: :arm64
-    url "{base}/{macos}"
-    sha256 "{macos_sha}"
+
+    on_arm do
+      url "{base}/{macos}"
+      sha256 "{macos_sha}"
+    end
   end
 
   on_linux do
     depends_on arch: :x86_64
-    url "{base}/{linux}"
-    sha256 "{linux_sha}"
+
+    on_intel do
+      url "{base}/{linux}"
+      sha256 "{linux_sha}"
+    end
   end
 
   def install
@@ -57,7 +62,7 @@ def main():
     missing = [a for a in ASSETS.values() if a not in sums]
     if missing:
         sys.exit(f"SHA256SUMS of v{version} does not list: {', '.join(missing)}")
-    out = TEMPLATE.format(version=version, base=base, macos=ASSETS["macos"], linux=ASSETS["linux"],
+    out = TEMPLATE.format(base=base, macos=ASSETS["macos"], linux=ASSETS["linux"],
                           macos_sha=sums[ASSETS["macos"]], linux_sha=sums[ASSETS["linux"]])
     path = pathlib.Path(__file__).resolve().parents[1] / "Formula" / "xyntetik-runner.rb"
     path.write_text(out, encoding="utf-8")
