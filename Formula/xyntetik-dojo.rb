@@ -1,8 +1,8 @@
 class XyntetikDojo < Formula
   desc "One window of terminals for agent harnesses, with a bus between them"
   homepage "https://xyntetik.com/dojo/"
-  url "https://github.com/Joakimpalm-Zen/xyntetik-dojo/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "bbc46d1b3a43dcbd0ba8d2f461e2b5a4bab23ac163a2fe09a6a7f58dd2f0be68"
+  url "https://github.com/Joakimpalm-Zen/xyntetik-dojo/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "beb23967eeded504ea5884291b631da1d4db44ceed5f71b61994727998280637"
   license "Apache-2.0"
   head "https://github.com/Joakimpalm-Zen/xyntetik-dojo.git", branch: "main"
 
