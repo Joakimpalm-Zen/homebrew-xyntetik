@@ -7,8 +7,8 @@ class XyntetikRunner < Formula
     depends_on arch: :arm64
 
     on_arm do
-      url "https://github.com/Joakimpalm-Zen/xyntetik-runner/releases/download/v1.21.0/runner-macos-arm64.tar.gz"
-      sha256 "8c6f62a407c4bd5b79dfe2a6716469d8acd9ab4a02cbca46c9f4159ac453554b"
+      url "https://github.com/Joakimpalm-Zen/xyntetik-runner/releases/download/v1.22.0/runner-macos-arm64.tar.gz"
+      sha256 "95979da8bf706fc4c987b0318fc3391886afdc1bd2ac65e6de5ced8dc6075605"
     end
   end
 
@@ -16,8 +16,8 @@ class XyntetikRunner < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/Joakimpalm-Zen/xyntetik-runner/releases/download/v1.21.0/runner-linux-x86_64.tar.gz"
-      sha256 "2ac770fe1500a79dc3d4d9312c244e098c8fdf20cb49987e80b9ba3c7b96d363"
+      url "https://github.com/Joakimpalm-Zen/xyntetik-runner/releases/download/v1.22.0/runner-linux-x86_64.tar.gz"
+      sha256 "c668bf0ff781106360754e713d91fdabb278b6bf609c9901f86f37d6f03fcc87"
     end
   end
 
